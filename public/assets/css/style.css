@@ -4761,7 +4761,7 @@ h6,
 /******************** ## Hero Section ******************/
 /*******************************************************/
 .hero-content {
-  max-width: 415px;
+  max-width: 700px;
 }
 .hero-content .h2 {
   display: block;
@@ -6033,7 +6033,7 @@ h6,
 .timeline-heading .title {
   color: white;
   line-height: 1;
-  font-size: 115px;
+  font-size: 70px;
   font-weight: 500;
   padding: 22px 75px;
   border-radius: 80px;
