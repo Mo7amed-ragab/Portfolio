@@ -1,16 +1,76 @@
 const skills = [
-  { id: 1, name: "HTML5", iconClass: "fab fa-html5" },
-  { id: 2, name: "CSS3", iconClass: "fab fa-css3-alt" },
-  { id: 3, name: "JavaScript", iconClass: "fab fa-js" },
-  { id: 4, name: "TypeScript", iconClass: "fas fa-code" },
-  { id: 5, name: "React.js", iconClass: "fab fa-react" },
-  { id: 6, name: "Next.js", iconClass: "fas fa-layer-group" },
-  { id: 7, name: "Tailwind CSS", iconClass: "fas fa-wind" },
-  { id: 8, name: "Bootstrap", iconClass: "fab fa-bootstrap" },
-  { id: 9, name: "Redux", iconClass: "fas fa-project-diagram" },
-  { id: 10, name: "Git", iconClass: "fab fa-git-alt" },
-  { id: 11, name: "GitHub", iconClass: "fab fa-github" },
-  { id: 12, name: "VS Code", iconClass: "fas fa-terminal" },
+  {
+    id: 1,
+    name: "HTML5",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    id: 2,
+    name: "CSS3",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
+    id: 3,
+    name: "JavaScript",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    id: 4,
+    name: "TypeScript",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+  {
+    id: 5,
+    name: "React.js",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    id: 6,
+    name: "Next.js",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  },
+  {
+    id: 7,
+    name: "Tailwind CSS",
+    iconSvg:
+      "https://camo.githubusercontent.com/d0f8d43c038c7a1b9b70bfa4f41f20707ae83817ddc0245d0de9889fb5179f91/68747470733a2f2f63646e2e73696d706c6569636f6e732e6f72672f7461696c77696e646373732f303642364434",
+  },
+  {
+    id: 8,
+    name: "Bootstrap",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+  },
+  {
+    id: 9,
+    name: "Redux",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+  },
+  {
+    id: 10,
+    name: "Git",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  {
+    id: 11,
+    name: "GitHub",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  },
+  {
+    id: 12,
+    name: "VS Code",
+    iconSvg:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+  },
 ];
 
 const Skill = () => {
@@ -43,10 +103,16 @@ const Skill = () => {
                       className="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6"
                       key={skill.id}
                     >
-                      <div className="skill-item wow fadeInUp delay-0-2s">
-                        <i
-                          className={`${skill.iconClass} fa-4x`}
-                          style={{ color: "#00bcd4" }}
+                      <div className="skill-item wow fadeInUp delay-0-2s text-center">
+                        <img
+                          src={skill.iconSvg}
+                          alt={skill.name}
+                          style={{
+                            width: "64px",
+                            height: "64px",
+                            marginBottom: "10px",
+                            filter: "drop-shadow(0 0 4px #00bcd4)",
+                          }}
                         />
                         <h5>{skill.name}</h5>
                       </div>

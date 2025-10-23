@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Resume from "@/components/Resume";
 import Skill from "@/components/Skill";
-import Testimonial from "@/components/Testimonial";
 import NoxfolioLayout from "@/layout/NoxfolioLayout";
 
 export default function Home() {
@@ -26,7 +25,7 @@ export default function Home() {
       <Projects />
       {/* Projects Area end */}
       {/* Testimonial Area start */}
-      <Testimonial />
+      {/* <Testimonial /> */}
       {/* Testimonial Area end */}
       {/* Contact Area start */}
       <Contact />

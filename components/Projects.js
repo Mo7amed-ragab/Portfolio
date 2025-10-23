@@ -134,6 +134,45 @@ const Projects = () => {
             </div>
           </div>
         </div>
+
+        {/* Project 4 */}
+        <div className="row align-items-center">
+          <div className="col-xl-6 col-lg-6">
+            <div className="project-content wow fadeInRight delay-0-2s">
+              <span className="sub-title">Frontend Development</span>
+              <h2>Market Mingle Website</h2>
+              <p>
+                A modern and responsive interface for an online marketplace
+                built to connect buyers and sellers. Features dynamic product
+                listings, category filtering, and a clean shopping experience
+                optimized for performance and usability.
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <div className="project-item style-four wow fadeInUp delay-0-2s">
+              <div className="image">
+                <img
+                  src="assets/images/projects/proj4.png"
+                  alt="Market Mingle Website"
+                />
+                <Link
+                  legacyBehavior
+                  href="https://github.com/Mo7amed-ragab/E-Commerce-Market-Mingle"
+                >
+                  <a
+                    className="hover-box"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Market Mingle Website"
+                  >
+                    <i className="far fa-arrow-right" />
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="bg-lines">

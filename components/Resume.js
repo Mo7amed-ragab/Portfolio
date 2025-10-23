@@ -9,7 +9,7 @@ const Resume = () => {
           <div className="col-lg-8">
             <div className="section-title mb-35 wow fadeInUp delay-0-2s">
               <span className="sub-title mb-15">MY Experience</span>
-              <h2>work &amp; Certificates</h2>
+              <h2>Work &amp; Certificates</h2>
             </div>
           </div>
         </div>
