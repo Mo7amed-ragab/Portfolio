@@ -173,6 +173,45 @@ const Projects = () => {
             </div>
           </div>
         </div>
+
+        {/* Project 5 */}
+        <div className="row align-items-center">
+          <div className="col-lg-6">
+            <div className="project-item style-four wow fadeInUp delay-0-2s">
+              <div className="image">
+                <img
+                  src="assets/images/projects/proj5.png"
+                  alt="Movies Website"
+                />
+                <Link
+                  legacyBehavior
+                  href="https://movies-website-v2.vercel.app/"
+                >
+                  <a
+                    className="hover-box"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Movies Website"
+                  >
+                    <i className="far fa-arrow-right" />
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-6 col-lg-6">
+            <div className="project-content wow fadeInRight delay-0-2s">
+              <span className="sub-title">Frontend Development</span>
+              <h2>Movies Website</h2>
+              <p>
+                Movies Website A modern and responsive movie discovery platform.
+                Features dynamic movie listings, search and filter
+                functionality, and a clean, intuitive interface optimized for
+                performance and usability.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="bg-lines">
