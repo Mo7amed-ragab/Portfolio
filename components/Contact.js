@@ -68,8 +68,8 @@ const Contact = () => {
               <ul className="list-style-two">
                 <li>Front-End Development</li>
                 <li>Responsive Web Design</li>
-                <li>Interactive UI/UX</li>
                 <li>API Integration</li>
+                <li>Building Interactive User Interfaces</li>
               </ul>
             </div>
           </div>

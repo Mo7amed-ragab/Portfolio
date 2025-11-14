@@ -29,7 +29,7 @@ const About = () => {
               <ul className="list-style-one two-column wow fadeInUp delay-0-2s">
                 <li>React.js Development</li>
                 <li>Next.js Development</li>
-                <li>UI/UX Design</li>
+                <li>API Integration</li>
                 <li>Responsive Web Design</li>
               </ul>
               <div className="about-info-box mt-25 wow fadeInUp delay-0-2s">
