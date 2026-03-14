@@ -39,7 +39,7 @@ const skills = [
     id: 7,
     name: "Tailwind CSS",
     iconSvg:
-      "https://camo.githubusercontent.com/d0f8d43c038c7a1b9b70bfa4f41f20707ae83817ddc0245d0de9889fb5179f91/68747470733a2f2f63646e2e73696d706c6569636f6e732e6f72672f7461696c77696e646373732f303642364434",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
   },
   {
     id: 8,
