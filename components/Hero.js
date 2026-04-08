@@ -23,7 +23,7 @@ const Hero = () => {
                   href="https://drive.google.com/uc?export=download&id=1TbicRDl_j825eTxAf5newn4QLxNmHJEr"
                 >
                   <a rel="noopener noreferrer" className="theme-btn" download>
-                    Download Resume <i className="far fa-angle-right" />
+                    Download CV <i className="far fa-angle-right" />
                   </a>
                 </Link>
               </div>

@@ -24,9 +24,6 @@ export default function Home() {
       {/* Projects Area start */}
       <Projects />
       {/* Projects Area end */}
-      {/* Testimonial Area start */}
-      {/* <Testimonial /> */}
-      {/* Testimonial Area end */}
       {/* Contact Area start */}
       <Contact />
       {/* Contact Area end */}

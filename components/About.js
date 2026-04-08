@@ -9,28 +9,30 @@ const About = () => {
                 <div className="section-title mb-35 wow fadeInUp delay-0-2s">
                   <span className="sub-title mb-15">About Me</span>
                   <h2>
-                    Passionate <span>Front-end Developer</span> Crafting
-                    Engaging Web Experiences
+                    <span>Frontend Developer</span> building scalable dashboards
+                    <br />& real-world systems
                   </h2>
                   <p>
-                    I specialize in building responsive and user-friendly web
-                    interfaces with modern technologies like React.js and
-                    Next.js, focusing on clean code and seamless API
-                    integration. With a strong eye for UI/UX design, I enjoy
-                    transforming complex requirements into intuitive and
-                    engaging user experiences. I am a passionate learner, always
-                    eager to contribute to innovative projects within a dynamic
-                    team.
+                    I specialize in developing production-level applications,
+                    including admin systems and client platforms, where I handle
+                    features end-to-end — from understanding requirements to
+                    implementation, code review, and delivery. Worked on complex
+                    systems such as Tickets Management, Roles & Permissions,
+                    Dashboards, Reports, and dynamic form builders, focusing on
+                    performance, scalability, and clean architecture. I enjoy
+                    turning complex workflows into intuitive user experiences
+                    while maintaining high code quality, performance
+                    optimization, and reusable component architecture.
                   </p>
                 </div>
               </div>
             </div>
             <div className="col-lg-6">
               <ul className="list-style-one two-column wow fadeInUp delay-0-2s">
-                <li>React.js Development</li>
-                <li>Next.js Development</li>
+                <li>React.js</li>
+                <li>State Management</li>
                 <li>API Integration</li>
-                <li>Responsive Web Design</li>
+                <li>Scalable Systems</li>
               </ul>
               <div className="about-info-box mt-25 wow fadeInUp delay-0-2s">
                 <div className="info-box-item">
