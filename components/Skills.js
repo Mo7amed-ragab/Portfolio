@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const orbitSkills = [
   {
-    value: "React",
+    value: "React.js",
     orbit: "orbit-one",
     angle: "18deg",
     color: "#61dafb",
@@ -150,7 +150,7 @@ const stars = [
 ];
 
 const Skills = () => {
-  const [activeSkill, setActiveSkill] = useState("React");
+  const [activeSkill, setActiveSkill] = useState("React.js");
 
   return (
     <div className="skills-orbit">
