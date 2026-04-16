@@ -1,16 +1,70 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { projectsData } from "@/utility/projectsData";
 
 const INITIAL_COUNT = 4;
 
+const skillMatchers = {
+  React: ["react"],
+  "Next.js": ["next"],
+  TypeScript: ["typescript"],
+  JavaScript: ["javascript"],
+  Redux: ["redux"],
+  TailwindCSS: ["tailwind"],
+  APIs: ["api", "restful"],
+  Git: ["git", "github"],
+};
+
+const projectMatchesSkill = (project, skill) => {
+  if (!skill) return true;
+
+  const haystack = [
+    project.title,
+    project.subtitle,
+    project.description,
+    project.keyFeature,
+    ...project.bullets,
+    ...project.techStack,
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  return (skillMatchers[skill] || [skill.toLowerCase()]).some((term) =>
+    haystack.includes(term),
+  );
+};
+
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
+  const [selectedSkill, setSelectedSkill] = useState(null);
+
+  useEffect(() => {
+    const handleFilterEvent = (event) => {
+      setSelectedSkill(event.detail?.skill || null);
+      setShowAll(true);
+    };
+
+    window.addEventListener("projects:filter", handleFilterEvent);
+
+    return () => {
+      window.removeEventListener("projects:filter", handleFilterEvent);
+    };
+  }, []);
+
+  const filteredProjects = !selectedSkill
+    ? projectsData
+    : (() => {
+        const matchingProjects = projectsData.filter((project) =>
+          projectMatchesSkill(project, selectedSkill),
+        );
+
+        return matchingProjects.length ? matchingProjects : projectsData;
+      })();
 
   const visibleProjects = showAll
-    ? projectsData
-    : projectsData.slice(0, INITIAL_COUNT);
+    ? filteredProjects
+    : filteredProjects.slice(0, INITIAL_COUNT);
 
   return (
     <section
@@ -25,6 +79,20 @@ const Projects = () => {
               <h2>
                 Explore My Popular <span>Projects</span>
               </h2>
+              {selectedSkill && (
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                  <span className="rounded-full border border-[#c9f31d]/30 bg-[#c9f31d]/10 px-4 py-2 text-sm text-[#c9f31d]">
+                    Filtered by {selectedSkill}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedSkill(null)}
+                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70 transition hover:border-white/20 hover:bg-white/10 hover:text-white"
+                  >
+                    Clear filter
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -37,7 +105,7 @@ const Projects = () => {
           />
         ))}
 
-        {projectsData.length > INITIAL_COUNT && (
+        {filteredProjects.length > INITIAL_COUNT && (
           <div className="text-center mt-30">
             <button
               className="theme-btn"

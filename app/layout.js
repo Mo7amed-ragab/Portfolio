@@ -1,4 +1,4 @@
-import { DM_Sans, Inter } from "next/font/google";
+import { DM_Sans, Inter, Space_Grotesk } from "next/font/google";
 
 import Preloader from "@/layout/Preloader";
 import "@css/animate.min.css";
@@ -23,16 +23,23 @@ const dm_sans = DM_Sans({
   variable: "--font-dm_sans",
   display: "swap",
 });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-space_grotesk",
+  display: "swap",
+});
 
 /** Font family */
-const fontFamily = `${inter.variable} ${dm_sans.variable} `;
-// TODO: update metadata;
+const fontFamily = `${inter.variable} ${dm_sans.variable} ${spaceGrotesk.variable} `;
+
 export const metadata = {
-  title: {
-    template: "Portfolio",
-    default: "Portfolio",
+  title: "Mohamed Ragab | Front-End Developer",
+  description: "Portfolio of Mohamed Ibrahim Ragab, Front-End Developer.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
   },
-  description: "Portfolio",
 };
 
 export default function RootLayout({ children }) {

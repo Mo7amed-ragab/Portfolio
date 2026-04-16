@@ -1,36 +1,26 @@
-export const OnePageMenu = () => {
+export const OnePageMenu = ({ onItemClick }) => {
+  const items = [
+    { href: "#home", label: "Home", active: true },
+    { href: "#about", label: "About" },
+    { href: "#experiences", label: "Experiences" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact Me" },
+  ];
+
   return (
     <ul className="navigation clearfix">
-      <li>
-        <a className="text-decoration-none" href="#home">
-          Home
-        </a>
-      </li>
-      <li>
-        <a className="text-decoration-none" href="#about">
-          about
-        </a>
-      </li>
-      <li>
-        <a className="text-decoration-none" href="#experiences">
-          Experiences
-        </a>
-      </li>
-      <li>
-        <a className="text-decoration-none" href="#skills">
-          skills
-        </a>
-      </li>
-      <li>
-        <a className="text-decoration-none" href="#projects">
-          projects
-        </a>
-      </li>
-      <li>
-        <a className="text-decoration-none" href="#contact">
-          Contact Me
-        </a>
-      </li>
+      {items.map((item) => (
+        <li key={item.href} className={item.active ? "current" : ""}>
+          <a
+            className={`text-decoration-none ${item.active ? "is-active" : ""}`}
+            href={item.href}
+            aria-current={item.active ? "page" : undefined}
+            onClick={onItemClick}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
     </ul>
   );
 };

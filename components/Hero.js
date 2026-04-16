@@ -1,61 +1,97 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+import Skills from "./Skills";
+
+const textVariant = {
+  hidden: { opacity: 0, x: -28 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
+};
+
+const skillsVariant = {
+  hidden: { opacity: 0, x: 28 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.45, delay: 0.08, ease: "easeOut" },
+  },
+};
 
 const Hero = () => {
   return (
-    <section id="home" className="main-hero-area pt-150 pb-80 rel z-1">
+    <section id="home" className="hero-v2 rel z-1">
+      <div className="hero-grid-background" />
+      <div className="hero-glow-background" />
+
       <div className="container">
-        <div className="row align-items-center justify-content-between">
-          <div className="col-lg-8 col-sm-7">
-            <div className="hero-content rmb-55 wow fadeInUp delay-0-2s">
-              <span className="h2">Hello, i’m </span>
-              <h1>
-                <b>Mohamed Ibrahim Ragab</b> <br />
-                Front End Developer
-              </h1>
-              <div className="hero-btns">
-                <Link legacyBehavior href="#contact">
-                  <a className="theme-btn">
-                    Contact Me <i className="far fa-angle-right" />
-                  </a>
-                </Link>
-                <Link
-                  legacyBehavior
-                  href="https://drive.google.com/uc?export=download&id=1TbicRDl_j825eTxAf5newn4QLxNmHJEr"
-                >
-                  <a rel="noopener noreferrer" className="theme-btn" download>
-                    Download CV <i className="far fa-angle-right" />
-                  </a>
-                </Link>
-              </div>
+        <div className="row align-items-center hero-v2__row">
+          <motion.div
+            variants={textVariant}
+            initial="hidden"
+            animate="visible"
+            className="col-lg-6 hero-v2__content-col"
+          >
+            <div className="hero-v2__greeting">
+              <span className="hero-v2__greeting-wave" aria-hidden="true">
+                👋
+              </span>
+              <span>Hey, I&apos;m</span>
             </div>
-          </div>
-          <div className="col-lg-4">
-            <div className="author-image-part wow fadeIn delay-0-3s">
-              <div className="bg-circle" />
-              <img src="assets/images/hero/me3.png" alt="Author" />
-              <div className="progress-shape">
-                <img
-                  src="assets/images/hero/progress-shape.png"
-                  alt="Progress"
-                />
-              </div>
+
+            <h1
+              className="hero-v2__title"
+              style={{ fontFamily: "var(--font-dm_sans)" }}
+            >
+              <span className="hero-v2__title-main">Mohamed Ibrahim</span>{" "}
+              <span className="hero-v2__title-gradient">Ragab</span>
+            </h1>
+
+            <p className="hero-v2__description">
+              Specializing in engineering high-fidelity Dashboards and complex
+              web ecosystems. I bridge the gap between sophisticated design and
+              scalable performance using the modern React stack.
+            </p>
+
+            <div className="hero-v2__actions">
+              <Link
+                href="https://drive.google.com/uc?export=download&id=1TbicRDl_j825eTxAf5newn4QLxNmHJEr"
+                download
+                className="hero-v2__button hero-v2__button--primary"
+              >
+                <span>
+                  Download CV <i className="ms-2 fs-5 far fa-arrow-right" />
+                </span>
+              </Link>
+
+              <Link
+                href="#contact"
+                className="hero-v2__button hero-v2__button--secondary"
+              >
+                <span>
+                  Contact Me <i className="ms-2 fs-5 far fa-arrow-right" />
+                </span>
+              </Link>
             </div>
-          </div>
+          </motion.div>
+
+          <motion.div
+            variants={skillsVariant}
+            initial="hidden"
+            animate="visible"
+            className="col-lg-6 hero-v2__skills-col"
+          >
+            <Skills />
+          </motion.div>
         </div>
-      </div>
-      <div className="bg-lines">
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
       </div>
     </section>
   );
 };
+
 export default Hero;

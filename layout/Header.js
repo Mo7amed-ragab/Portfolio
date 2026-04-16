@@ -4,6 +4,7 @@ import { noxfolioUtilits } from "@/utility";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import OnePageMenu from "./Menu";
+import Logo from "@/components/Logo";
 
 const Header = () => {
   return <Header1 />;
@@ -11,15 +12,11 @@ const Header = () => {
 export default Header;
 
 const Header1 = () => {
+  const [toggle, setToggle] = useState(false);
+
   useEffect(() => {
     noxfolioUtilits.stickyNav();
   }, []);
-
-  const toggleSidebar = () => {
-    document.querySelector("body").classList.add("side-content-visible");
-  };
-
-  const [toggle, setToggle] = useState(false);
 
   return (
     <header className="main-header menu-absolute">
@@ -30,7 +27,12 @@ const Header1 = () => {
             <div className="logo-outer">
               <div className="logo fs-3 my-10">
                 <Link legacyBehavior href="/">
-                  Portfolio
+                  <a
+                    className="brand-link"
+                    aria-label="Mohamed Ibrahim Ragab home"
+                  >
+                    <Logo title="MR logo" />
+                  </a>
                 </Link>
               </div>
             </div>
@@ -40,48 +42,38 @@ const Header1 = () => {
                 <div className="navbar-header">
                   <div className="mobile-logo fs-3 my-10">
                     <Link legacyBehavior href="/">
-                      Portfolio
+                      <a
+                        className="brand-link"
+                        aria-label="Mohamed Ibrahim Ragab home"
+                      >
+                        <Logo title="MR logo" />
+                      </a>
                     </Link>
                   </div>
-                  {/* Toggle Button */}
                   <button
                     type="button"
-                    className="navbar-toggle me-4"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse"
-                    onClick={() => setToggle(!toggle)}
+                    className="mobile-menu-toggle menu-sidebar"
+                    onClick={() => setToggle((prev) => !prev)}
+                    aria-expanded={toggle}
+                    aria-label={toggle ? "Close menu" : "Open menu"}
                   >
-                    <span className="icon-bar" />
-                    <span className="icon-bar" />
-                    <span className="icon-bar" />
+                    <img
+                      src="assets/images/shape/sidebar-tottler.svg"
+                      alt="Toggler"
+                    />
                   </button>
                 </div>
                 <div
-                  className={`navbar-collapse collapse clearfix ${
-                    toggle ? "show" : ""
-                  }`}
+                  className={`navbar-collapse clearfix header-nav-open ${toggle ? "show" : ""}`}
                 >
-                  <OnePageMenu />
+                  <OnePageMenu onItemClick={() => setToggle(false)} />
                 </div>
               </nav>
               {/* Main Menu End*/}
             </div>
-            {/* Menu Button */}
-            <div className="menu-btns d-none d-lg-block">
-              {/* menu sidbar */}
-              <div className="menu-sidebar">
-                <button onClick={() => toggleSidebar()}>
-                  <img
-                    src="assets/images/shape/sidebar-tottler.svg"
-                    alt="Toggler"
-                  />
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-      {/*End Header Upper*/}
     </header>
   );
 };
