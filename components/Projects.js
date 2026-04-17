@@ -77,7 +77,8 @@ const Projects = () => {
             <div className="section-title text-center mb-60 wow fadeInUp delay-0-2s">
               <span className="sub-title mb-15">Latest Works</span>
               <h2>
-                Explore My Popular <span>Projects</span>
+                Explore My Popular{" "}
+                <span className="hero-v2__title-gradient">Projects</span>
               </h2>
               {selectedSkill && (
                 <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
@@ -112,9 +113,7 @@ const Projects = () => {
               onClick={() => setShowAll((prev) => !prev)}
             >
               {showAll ? "Show Less" : "Show More"}{" "}
-              <i
-                className={`far fa-angle-${showAll ? "up" : "down"}`}
-              />
+              <i className={`far fa-angle-${showAll ? "up" : "down"}`} />
             </button>
           </div>
         )}

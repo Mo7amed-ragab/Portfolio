@@ -1,6 +1,7 @@
 import { DM_Sans, Inter, Space_Grotesk } from "next/font/google";
 
 import Preloader from "@/layout/Preloader";
+import WhatsappFloat from "@/components/WhatsappFloat";
 import "@css/animate.min.css";
 import "@css/bootstrap.min.css";
 import "@css/flaticon.min.css";
@@ -56,6 +57,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning>
         <Preloader />
         {children}
+        <WhatsappFloat />
       </body>
     </html>
   );
