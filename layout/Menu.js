@@ -58,15 +58,10 @@ export const OnePageMenu = ({ onItemClick }) => {
             aria-current={activeHref === item.href ? "page" : undefined}
             onClick={onItemClick}
           >
-            <span className="menu-link__meta">
-              <span className="menu-link__index">
-                {String(index + 1).padStart(2, "0")}
-              </span>
               <span className="menu-link__copy">
                 <span className="menu-link__eyebrow">{item.eyebrow}</span>
                 <span className="menu-link__label">{item.label}</span>
               </span>
-            </span>
             <span className="menu-link__arrow" aria-hidden="true">
               <i className="far fa-arrow-right" />
             </span>
