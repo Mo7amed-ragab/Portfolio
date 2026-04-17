@@ -146,7 +146,7 @@ const About = () => {
                           </div>
                         ),
                         link: "tel:+201092321755",
-                        icon: "far fa-calendar-check",
+                        icon: "far fa-phone",
                       },
                     ].map((item, idx) => (
                       <a

@@ -1,9 +1,11 @@
-import About from "@/components/About";
-import Contact from "@/components/Contact";
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import Resume from "@/components/Resume";
 import NoxfolioLayout from "@/layout/NoxfolioLayout";
+
+const About = dynamic(() => import("@/components/About"), { ssr: true });
+const Resume = dynamic(() => import("@/components/Resume"), { ssr: true });
+const Projects = dynamic(() => import("@/components/Projects"), { ssr: true });
+const Contact = dynamic(() => import("@/components/Contact"), { ssr: true });
 
 export default function Home() {
   return (

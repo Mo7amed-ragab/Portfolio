@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   SiBootstrap,
   SiCss,
@@ -240,9 +241,11 @@ const Skills = () => {
                 >
                   <span className="skills-orbit__skill-icon" aria-hidden="true">
                     {skill.iconSrc ? (
-                      <img
+                      <Image
                         src={skill.iconSrc}
-                        alt=""
+                        alt={skill.value}
+                        width={24}
+                        height={24}
                         className={`skills-orbit__skill-icon-image ${skill.iconImageClassName ?? ""}`}
                       />
                     ) : (

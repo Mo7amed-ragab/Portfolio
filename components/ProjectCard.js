@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const ProjectCard = ({ project, isReversed }) => {
@@ -5,7 +6,14 @@ const ProjectCard = ({ project, isReversed }) => {
     <div className={isReversed ? "col-lg-6" : "col-md-6"}>
       <div className="project-item style-four wow fadeInUp delay-0-2s">
         <div className="image">
-          <img src={project.image} alt={project.alt} />
+          <Image
+            src={project.image}
+            alt={project.alt}
+            width={800}
+            height={600}
+            layout="responsive"
+            priority={false}
+          />
           {project.link && (
             <Link legacyBehavior href={project.link}>
               <a

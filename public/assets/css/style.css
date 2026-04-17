@@ -695,7 +695,6 @@ a.theme-btn.style-three {
   background-color: #131313;
   background-repeat: no-repeat;
   background-position: center center;
-  /* background-image: url(../images/preloader.gif); */
 }
 
 /* Pagination */
@@ -8022,7 +8021,6 @@ blockquote .blockquote-footer:before {
   width: 305px;
   height: 305px;
   position: absolute;
-  background: url(../images/faqs/faq-dots.png);
 }
 @media only screen and (max-width: 479px) {
   .faq-image-part:after,
