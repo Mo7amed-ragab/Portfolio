@@ -2570,6 +2570,10 @@ html {
     height: 50px;
     font-size: 26px;
   }
+  .nexus-val {
+    font-size: 10px !important;
+    word-break: break-all;
+  }
 }
 
 @media (max-width: 991px) {

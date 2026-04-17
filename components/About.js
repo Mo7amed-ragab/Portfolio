@@ -145,7 +145,7 @@ const About = () => {
                             <span>Open for Projects</span>
                           </div>
                         ),
-                        link: "callto:+20109232755",
+                        link: "tel:+201092321755",
                         icon: "far fa-calendar-check",
                       },
                     ].map((item, idx) => (
