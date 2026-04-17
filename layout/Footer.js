@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Logo from "@/components/Logo";
 
 const Footer = () => {
   return <Footer1 />;
@@ -47,13 +48,7 @@ const Footer1 = () => {
             <motion.div className="col-lg-4 col-md-6" variants={itemVariants}>
               <div className="footer-widget about-widget">
                 <div className="footer-logo mb-25">
-                  <h3
-                    className="text-white mb-0"
-                    style={{ letterSpacing: "2px" }}
-                  >
-                    <span style={{ color: "#c9f31d" }}>&lt;</span>MR
-                    <span style={{ color: "#c9f31d" }}>/&gt;</span>
-                  </h3>
+                  <Logo title="MR logo" />
                 </div>
                 <p className="footer-desc">
                   Building high-fidelity digital experiences with focus on
