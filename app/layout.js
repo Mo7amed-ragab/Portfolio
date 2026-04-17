@@ -37,8 +37,12 @@ export const metadata = {
   title: "Mohamed Ragab | Front-End Developer",
   description: "Portfolio of Mohamed Ibrahim Ragab, Front-End Developer.",
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
+    icon: [
+      { url: "/icon.svg?v=2", type: "image/svg+xml" },
+      { url: "/favicon.ico?v=2", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico?v=2",
+    apple: "/favicon.ico?v=2",
   },
 };
 
