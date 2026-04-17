@@ -18,6 +18,31 @@ const Header1 = () => {
     noxfolioUtilits.stickyNav();
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle("mobile-menu-open", toggle);
+
+    const handleResize = () => {
+      if (window.innerWidth > 991) {
+        setToggle(false);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setToggle(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.classList.remove("mobile-menu-open");
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [toggle]);
+
   return (
     <header className="main-header menu-absolute">
       {/*Header-Upper*/}
@@ -36,7 +61,7 @@ const Header1 = () => {
                 </Link>
               </div>
             </div>
-            <div className="nav-outer clearfix mx-auto">
+            <div className="nav-outer clearfix">
               {/* Main Menu */}
               <nav className="main-menu navbar-expand-lg">
                 <div className="navbar-header">
@@ -55,18 +80,36 @@ const Header1 = () => {
                     className="mobile-menu-toggle menu-sidebar"
                     onClick={() => setToggle((prev) => !prev)}
                     aria-expanded={toggle}
+                    aria-controls="mobile-navigation"
                     aria-label={toggle ? "Close menu" : "Open menu"}
                   >
-                    <img
-                      src="assets/images/shape/sidebar-tottler.svg"
-                      alt="Toggler"
-                    />
+                    <span className="mobile-menu-toggle__label">
+                      {toggle ? "Close" : "Menu"}
+                    </span>
+                    <span className="mobile-menu-toggle__icon" aria-hidden="true">
+                      <span />
+                      <span />
+                      <span />
+                    </span>
                   </button>
                 </div>
+                <button
+                  type="button"
+                  className={`mobile-nav-backdrop ${toggle ? "is-visible" : ""}`}
+                  onClick={() => setToggle(false)}
+                  aria-label="Close navigation"
+                />
                 <div
-                  className={`navbar-collapse clearfix header-nav-open ${toggle ? "show" : ""}`}
+                  id="mobile-navigation"
+                  className={`navbar-collapse clearfix ${toggle ? "show" : ""}`}
                 >
-                  <OnePageMenu onItemClick={() => setToggle(false)} />
+                  {toggle ? (
+                    <div className="mobile-nav-panel">
+                      <OnePageMenu onItemClick={() => setToggle(false)} />
+                    </div>
+                  ) : (
+                    <OnePageMenu onItemClick={() => setToggle(false)} />
+                  )}
                 </div>
               </nav>
               {/* Main Menu End*/}

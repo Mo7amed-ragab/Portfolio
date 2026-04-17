@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 export const OnePageMenu = ({ onItemClick }) => {
   const items = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#experiences", label: "Experiences" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact Me" },
+    { href: "#home", label: "Home", eyebrow: "Start here" },
+    { href: "#about", label: "About", eyebrow: "Who I am" },
+    { href: "#experiences", label: "Experiences", eyebrow: "Career path" },
+    { href: "#projects", label: "Projects", eyebrow: "Selected work" },
+    { href: "#contact", label: "Contact Me", eyebrow: "Let us talk" },
   ];
   const [activeHref, setActiveHref] = useState("#home");
 
@@ -50,7 +50,7 @@ export const OnePageMenu = ({ onItemClick }) => {
 
   return (
     <ul className="navigation clearfix">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <li key={item.href} className={activeHref === item.href ? "current" : ""}>
           <a
             className={`text-decoration-none ${activeHref === item.href ? "is-active" : ""}`}
@@ -58,7 +58,18 @@ export const OnePageMenu = ({ onItemClick }) => {
             aria-current={activeHref === item.href ? "page" : undefined}
             onClick={onItemClick}
           >
-            {item.label}
+            <span className="menu-link__meta">
+              <span className="menu-link__index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="menu-link__copy">
+                <span className="menu-link__eyebrow">{item.eyebrow}</span>
+                <span className="menu-link__label">{item.label}</span>
+              </span>
+            </span>
+            <span className="menu-link__arrow" aria-hidden="true">
+              <i className="far fa-arrow-right" />
+            </span>
           </a>
         </li>
       ))}
