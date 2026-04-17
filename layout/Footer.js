@@ -54,18 +54,22 @@ const Footer1 = () => {
                   {
                     href: "https://www.linkedin.com/in/mo7amed-ibrahim/",
                     icon: "fab fa-linkedin-in",
+                    label: "LinkedIn Profile",
                   },
                   {
                     href: "https://github.com/Mo7amed-ragab",
                     icon: "fab fa-github",
+                    label: "GitHub Profile",
                   },
                   {
                     href: "https://www.facebook.com/midooraga",
                     icon: "fab fa-facebook-f",
+                    label: "Facebook Profile",
                   },
                   {
                     href: "https://www.instagram.com/mohamed_raagab_/",
                     icon: "fab fa-instagram",
+                    label: "Instagram Profile",
                   },
                 ].map((social, i) => (
                   <motion.a
@@ -73,6 +77,7 @@ const Footer1 = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={social.label}
                     whileHover={{
                       scale: 1.1,
                       backgroundColor: "#c9f31d",
@@ -90,6 +95,7 @@ const Footer1 = () => {
               <motion.a
                 href="#"
                 className="back-to-top-circle"
+                aria-label="Back to Top"
                 whileHover={{
                   y: -5,
                   backgroundColor: "#c9f31d",
