@@ -1,138 +1,166 @@
 "use client";
 
 import { useState } from "react";
+import {
+  SiBootstrap,
+  SiCss,
+  SiFormik,
+  SiGit,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiNextdotjs,
+  SiPostman,
+  SiOpenapiinitiative,
+  SiReact,
+  SiReactquery,
+  SiRedux,
+  SiSass,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+
+const getSkillWidth = (skill) =>
+  skill.width ?? `${Math.max(126, skill.value.length * 9 + 48)}px`;
 
 const orbitSkills = [
   {
     value: "React.js",
     orbit: "orbit-one",
-    angle: "18deg",
+    angle: "12deg",
     color: "#61dafb",
-    size: "sm",
     textColor: "#07131f",
+    icon: SiReact,
   },
   {
     value: "TypeScript",
     orbit: "orbit-three",
-    angle: "102deg",
+    angle: "84deg",
     color: "#3178c6",
-    size: "md",
     textColor: "#f8fbff",
+    icon: SiTypescript,
+  },
+  {
+    value: "GitHub",
+    orbit: "orbit-one",
+    angle: "92deg",
+    color: "#f5f7fb",
+    textColor: "#0b1220",
+    icon: SiGithub,
   },
   {
     value: "Next.js",
     orbit: "orbit-two",
-    angle: "58deg",
+    angle: "34deg",
     color: "#f8fafc",
-    size: "sm",
     textColor: "#0a0d12",
+    icon: SiNextdotjs,
   },
   {
     value: "JavaScript",
     orbit: "orbit-two",
-    angle: "338deg",
+    angle: "322deg",
     color: "#f7df1e",
-    size: "md",
     textColor: "#161910",
+    icon: SiJavascript,
   },
   {
     value: "Redux",
     orbit: "orbit-one",
-    angle: "300deg",
+    angle: "286deg",
     color: "#a78bfa",
-    size: "sm",
     textColor: "#140f24",
+    icon: SiRedux,
   },
   {
     value: "React Query",
     orbit: "orbit-three",
-    angle: "136deg",
+    angle: "140deg",
     color: "#ff4154",
-    size: "md",
-    width: "164px",
     textColor: "#fff4f6",
-  },
-  {
-    value: "TailwindCSS",
-    orbit: "orbit-three",
-    angle: "222deg",
-    color: "#38bdf8",
-    size: "md",
-    textColor: "#08131d",
+    icon: SiReactquery,
   },
   {
     value: "Bootstrap",
     orbit: "orbit-two",
-    angle: "146deg",
+    angle: "156deg",
     color: "#7952b3",
-    size: "sm",
     textColor: "#fcfbff",
+    icon: SiBootstrap,
+  },
+  {
+    value: "TailwindCSS",
+    orbit: "orbit-three",
+    angle: "232deg",
+    color: "#38bdf8",
+    textColor: "#08131d",
+    icon: SiTailwindcss,
   },
   {
     value: "Postman",
     orbit: "orbit-three",
-    angle: "294deg",
+    angle: "284deg",
     color: "#ff6c37",
-    size: "md",
     textColor: "#1d0e07",
+    icon: SiPostman,
   },
   {
     value: "HTML",
     orbit: "orbit-one",
-    angle: "132deg",
+    angle: "150deg",
     color: "#e34f26",
-    size: "sm",
     textColor: "#fff7f4",
+    icon: SiHtml5,
   },
   {
     value: "CSS",
     orbit: "orbit-two",
-    angle: "252deg",
+    angle: "246deg",
     color: "#1572b6",
-    size: "sm",
     textColor: "#fff7f4",
+    icon: SiCss,
   },
   {
     value: "Sass",
     orbit: "orbit-one",
-    angle: "230deg",
+    angle: "212deg",
     color: "#cc6699",
-    size: "sm",
     textColor: "#220d18",
+    icon: SiSass,
   },
   {
     value: "Zustand",
     orbit: "orbit-two",
-    angle: "16deg",
+    angle: "184deg",
     color: "#8b6b4a",
-    size: "sm",
-    width: "138px",
     textColor: "#fff8f0",
+    iconSrc:
+      "https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg",
+    iconImageClassName: "skills-orbit__skill-icon-image--zustand",
   },
   {
     value: "Formik",
     orbit: "orbit-three",
-    angle: "18deg",
+    angle: "24deg",
     color: "#ec4899",
-    size: "lg",
     textColor: "#210811",
+    icon: SiFormik,
   },
   {
     value: "Git",
     orbit: "orbit-two",
-    angle: "196deg",
+    angle: "120deg",
     color: "#f1502f",
-    size: "sm",
     textColor: "#1b0d09",
+    icon: SiGit,
   },
   {
     value: "REST APIs",
     orbit: "orbit-three",
-    angle: "174deg",
+    angle: "184deg",
     color: "#f97316",
-    size: "md",
-    width: "146px",
     textColor: "#1c0d05",
+    icon: SiOpenapiinitiative,
   },
 ];
 
@@ -187,6 +215,7 @@ const Skills = () => {
 
         {orbitSkills.map((skill) => {
           const isActive = activeSkill === skill.value;
+          const Icon = skill.icon;
 
           return (
             <div
@@ -199,13 +228,7 @@ const Skills = () => {
                   "--orbit-angle": skill.angle,
                   "--skill-color": skill.color,
                   "--skill-text-color": skill.textColor,
-                  "--skill-width":
-                    skill.width ??
-                    (skill.size === "lg"
-                      ? "190px"
-                      : skill.size === "md"
-                        ? "154px"
-                        : "126px"),
+                  "--skill-width": getSkillWidth(skill),
                 }}
               >
                 <button
@@ -215,7 +238,17 @@ const Skills = () => {
                   aria-pressed={isActive}
                   aria-label={`${skill.value} skill highlight`}
                 >
-                  <span className="skills-orbit__skill-dot" />
+                  <span className="skills-orbit__skill-icon" aria-hidden="true">
+                    {skill.iconSrc ? (
+                      <img
+                        src={skill.iconSrc}
+                        alt=""
+                        className={`skills-orbit__skill-icon-image ${skill.iconImageClassName ?? ""}`}
+                      />
+                    ) : (
+                      <Icon {...skill.iconProps} />
+                    )}
+                  </span>
                   <span className="skills-orbit__skill-label">
                     {skill.value}
                   </span>
