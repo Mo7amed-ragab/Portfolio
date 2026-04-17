@@ -695,7 +695,7 @@ a.theme-btn.style-three {
   background-color: #131313;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../images/preloader.gif);
+  /* background-image: url(../images/preloader.gif); */
 }
 
 /* Pagination */
