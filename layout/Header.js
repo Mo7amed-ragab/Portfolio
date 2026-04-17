@@ -3,6 +3,7 @@
 import { noxfolioUtilits } from "@/utility";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import OnePageMenu from "./Menu";
 import Logo from "@/components/Logo";
 
@@ -45,9 +46,13 @@ const Header1 = () => {
 
   return (
     <header className="main-header menu-absolute">
-      {/*Header-Upper*/}
-      <div className="header-upper">
-        <div className="container  clearfix">
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="header-upper"
+      >
+        <div className="container clearfix">
           <div className="header-inner rel d-flex align-items-center">
             <div className="logo-outer">
               <div className="logo fs-3 my-10">
@@ -62,7 +67,6 @@ const Header1 = () => {
               </div>
             </div>
             <div className="nav-outer clearfix">
-              {/* Main Menu */}
               <nav className="main-menu navbar-expand-lg">
                 <div className="navbar-header">
                   <div className="mobile-logo fs-3 my-10">
@@ -86,7 +90,10 @@ const Header1 = () => {
                     <span className="mobile-menu-toggle__label">
                       {toggle ? "Close" : "Menu"}
                     </span>
-                    <span className="mobile-menu-toggle__icon" aria-hidden="true">
+                    <span
+                      className="mobile-menu-toggle__icon"
+                      aria-hidden="true"
+                    >
                       <span />
                       <span />
                       <span />
@@ -112,11 +119,10 @@ const Header1 = () => {
                   )}
                 </div>
               </nav>
-              {/* Main Menu End*/}
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 };

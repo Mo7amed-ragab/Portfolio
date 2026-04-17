@@ -1,4 +1,6 @@
+"use client";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return <Footer1 />;
@@ -12,98 +14,176 @@ const Footer1 = () => {
     setDate(new Date().getFullYear());
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <footer className="main-footer rel z-1">
-      <div className="footer-top-wrap bgc-black pt-100 pb-75 footer-widget widget_contact_info wow fadeInUp delay-0-6s">
+    <footer className="main-footer rel z-1 bgc-black">
+      {/* Decorative Top Border */}
+      <div className="footer-glow-top" />
+
+      <div className="footer-top-wrap pt-100 pb-40">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-4">
-              <h6 className="footer-title">Follow</h6>
-              <div className="social-flow">
-                <div className="social-style-one">
-                  <a
-                    href="https://www.facebook.com/midooraga"
-                    target="_blank"
-                    rel="noopener noreferrer"
+          <motion.div
+            className="row gap-40 pb-60"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {/* Brand & About */}
+            <motion.div className="col-lg-4 col-md-6" variants={itemVariants}>
+              <div className="footer-widget about-widget">
+                <div className="footer-logo mb-25">
+                  <h3
+                    className="text-white mb-0"
+                    style={{ letterSpacing: "2px" }}
                   >
-                    <i className="fab fa-facebook-f" />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/mohamed_raagab_/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                  <a
-                    href="https://github.com/Mo7amed-ragab"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-github" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/mo7amed-ibrahim/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-linkedin-in" />
-                  </a>
+                    <span style={{ color: "#c9f31d" }}>&lt;</span>MR
+                    <span style={{ color: "#c9f31d" }}>/&gt;</span>
+                  </h3>
+                </div>
+                <p className="footer-desc">
+                  Building high-fidelity digital experiences with focus on
+                  performance, scalability, and intuitive user interfaces.
+                </p>
+                <div className="social-style-one mt-25">
+                  {[
+                    {
+                      href: "https://www.linkedin.com/in/mo7amed-ibrahim/",
+                      icon: "fab fa-linkedin-in",
+                    },
+                    {
+                      href: "https://github.com/Mo7amed-ragab",
+                      icon: "fab fa-github",
+                    },
+                    {
+                      href: "https://www.facebook.com/midooraga",
+                      icon: "fab fa-facebook-f",
+                    },
+                    {
+                      href: "https://www.instagram.com/mohamed_raagab_/",
+                      icon: "fab fa-instagram",
+                    },
+                  ].map((social, i) => (
+                    <motion.a
+                      key={i}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{
+                        scale: 1.15,
+                        backgroundColor: "#c9f31d",
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      style={{ color: "white" }}
+                    >
+                      <motion.i
+                        className={social.icon}
+                        whileHover={{ color: "#000" }}
+                      />
+                    </motion.a>
+                  ))}
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 footer-title">
-              <div className="copyright-text">
-                <p>Copyright @{date}, All Rights Reserved</p>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="">
-                <h6 className="footer-title">Address</h6>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div className="col-lg-3 col-md-6" variants={itemVariants}>
+              <div className="footer-widget menu-widget">
+                <h6 className="footer-title">Navigation</h6>
                 <ul>
                   <li>
-                    <i className="far fa-map-marker-alt" /> Cairo, Egypt
+                    <a href="#home">Home</a>
                   </li>
                   <li>
-                    <i className="far fa-envelope" />{" "}
-                    <a href="mailto:mohamedragab0160@gmail.com">
-                      mohamedragab0160@gmail.com
-                    </a>
+                    <a href="#about">About</a>
                   </li>
                   <li>
-                    <i className="far fa-phone" />{" "}
-                    <a href="callto:+20109232755">+20 1092321755</a>
+                    <a href="#projects">Projects</a>
+                  </li>
+                  <li>
+                    <a href="#contact">Contact Me</a>
                   </li>
                 </ul>
+              </div>
+            </motion.div>
+
+            {/* Column 3: Contact Info */}
+            <motion.div className="col-lg-5 col-md-12" variants={itemVariants}>
+              <div className="footer-widget contact-widget">
+                <h6 className="footer-title">Get In Touch</h6>
+                <ul className="footer-contact-list">
+                  <motion.li whileHover={{ x: 5 }}>
+                    <div className="icon">
+                      <i className="far fa-map-marker-alt" />
+                    </div>
+                    <div className="text">Cairo, Egypt</div>
+                  </motion.li>
+                  <motion.li whileHover={{ x: 5 }}>
+                    <div className="icon">
+                      <i className="far fa-envelope" />
+                    </div>
+                    <div className="text">
+                      <a href="mailto:mohamedragab0160@gmail.com">
+                        mohamedragab0160@gmail.com
+                      </a>
+                    </div>
+                  </motion.li>
+                  <motion.li whileHover={{ x: 5 }}>
+                    <div className="icon">
+                      <i className="far fa-phone" />
+                    </div>
+                    <div className="text">
+                      <a href="callto:+20109232755">+20 1092321755</a>
+                    </div>
+                  </motion.li>
+                </ul>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Merged Footer Bottom */}
+          <div className="footer-bottom-inner">
+            <div className="row align-items-center">
+              <div className="col-md-6">
+                <p className="copyright-text mb-0">
+                  Copyright © {date}{" "}
+                  <span className="text-primary">Mohamed Ragab</span>. All
+                  Rights Reserved.
+                </p>
+              </div>
+              <div className="col-md-6 text-md-end">
+                <motion.a
+                  href="#"
+                  className="back-to-top-btn"
+                  whileHover={{ y: -5 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <i className="fas fa-arrow-up" />
+                </motion.a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="footer-bottom pt-20 pb-5 rpt-25">
-        <div className="container">
-          <div className="row">
-            {/* Scroll Top Button */}
-            <a
-              href="#"
-              className="scroll-top scroll-to-target d-inline-block mb-3"
-            >
-              <span className="fas fa-angle-double-up" />
-            </a>
-          </div>
-        </div>
-        <div className="bg-lines">
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
+
+      {/* Background Decorative Elements */}
+      <div className="footer-shapes">
+        <div className="shape-one" />
+        <div className="shape-two" />
       </div>
     </footer>
   );

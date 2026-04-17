@@ -1,4 +1,6 @@
+"use client";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export const OnePageMenu = ({ onItemClick }) => {
   const items = [
@@ -17,9 +19,10 @@ export const OnePageMenu = ({ onItemClick }) => {
       const currentHash = window.location.hash;
       const scrollPosition = window.scrollY + window.innerHeight * 0.35;
 
-      let nextActive = currentHash && sectionIds.includes(currentHash.slice(1))
-        ? currentHash
-        : "#home";
+      let nextActive =
+        currentHash && sectionIds.includes(currentHash.slice(1))
+          ? currentHash
+          : "#home";
 
       for (const id of sectionIds) {
         const section = document.getElementById(id);
@@ -50,25 +53,61 @@ export const OnePageMenu = ({ onItemClick }) => {
 
   return (
     <ul className="navigation clearfix">
-      {items.map((item, index) => (
-        <li key={item.href} className={activeHref === item.href ? "current" : ""}>
-          <a
-            className={`text-decoration-none ${activeHref === item.href ? "is-active" : ""}`}
-            href={item.href}
-            aria-current={activeHref === item.href ? "page" : undefined}
-            onClick={onItemClick}
+      {items.map((item, index) => {
+        const isActive = activeHref === item.href;
+        return (
+          <motion.li
+            key={item.href}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 * index, duration: 0.5 }}
+            className={isActive ? "current" : ""}
           >
-              <span className="menu-link__copy">
-                <span className="menu-link__eyebrow">{item.eyebrow}</span>
-                <span className="menu-link__label">{item.label}</span>
-              </span>
-            <span className="menu-link__arrow" aria-hidden="true">
-              <i className="far fa-arrow-right" />
-            </span>
-          </a>
-        </li>
-      ))}
+            <LinkItem
+              item={item}
+              isActive={isActive}
+              onItemClick={onItemClick}
+            />
+          </motion.li>
+        );
+      })}
     </ul>
   );
 };
+
+const LinkItem = ({ item, isActive, onItemClick }) => {
+  return (
+    <motion.a
+      className={`text-decoration-none ${isActive ? "is-active" : ""}`}
+      href={item.href}
+      aria-current={isActive ? "page" : undefined}
+      onClick={onItemClick}
+      whileHover={{ y: -2 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      style={{ position: "relative" }}
+    >
+      <span className="menu-link__copy">
+        <span className="menu-link__eyebrow">{item.eyebrow}</span>
+        <span className="menu-link__label">{item.label}</span>
+      </span>
+      <span className="menu-link__arrow" aria-hidden="true">
+        <i className="far fa-arrow-right" />
+      </span>
+
+      {isActive && (
+        <motion.div
+          layoutId="nav-underline"
+          className="nav-motion-underline"
+          initial={false}
+          transition={{
+            type: "spring",
+            stiffness: 380,
+            damping: 30,
+          }}
+        />
+      )}
+    </motion.a>
+  );
+};
+
 export default OnePageMenu;
