@@ -2741,3 +2741,271 @@ html {
   }
 }
 
+
+/* Project Tech Stack Styles - Premium Look */
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 20px;
+}
+
+.tech-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.tech-tag::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201, 243, 29, 0.1), transparent 80%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tech-tag:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(201, 243, 29, 0.34);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(201, 243, 29, 0.1);
+}
+
+.tech-tag:hover::before {
+  opacity: 1;
+}
+
+.tech-tag__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #c9f31d;
+  filter: drop-shadow(0 0 8px rgba(201, 243, 29, 0.3));
+  transition: transform 0.4s ease;
+}
+
+.tech-tag:hover .tech-tag__icon {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.tech-tag__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
+}
+
+.tech-tag:hover .tech-tag__label {
+  color: #fff;
+}
+
+/* Adjusting existing project content for better flow */
+.project-description {
+  margin-bottom: 24px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.project-bullets {
+  margin-bottom: 24px;
+}
+
+.project-content h2 {
+    margin-bottom: 20px;
+    font-size: 38px;
+    background: linear-gradient(to right, #fff, rgba(255,255,255,0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Projects Section - Advanced Aesthetics */
+.projects-area {
+  background: #050608;
+  overflow: hidden;
+}
+
+.projects-title {
+  font-size: clamp(40px, 5vw, 64px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
+  margin-bottom: 25px !important;
+}
+
+.projects-subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+.projects-items-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Reduced gap as requested */
+}
+
+@media (max-width: 991px) {
+  .projects-items-wrapper {
+    gap: 80px;
+  }
+}
+
+.projects-load-more {
+  padding: 16px 42px !important;
+  border-radius: 999px !important;
+  font-size: 16px !important;
+  background: linear-gradient(135deg, #c9f31d, #9ae6ff) !important;
+  border: none !important;
+  box-shadow: 0 20px 40px rgba(201, 243, 29, 0.15) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.projects-load-more:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(201, 243, 29, 0.25) !important;
+}
+
+.projects-load-more span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #000;
+}
+
+/* Enhancing Project Card Content Specifically in this wrapper */
+.projects-items-wrapper .project-content {
+    background: rgba(255, 255, 255, 0.01);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+}
+
+.projects-items-wrapper .project-content:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.projects-items-wrapper .project-item.style-four .image {
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.projects-items-wrapper .project-item.style-four:hover .image {
+    transform: scale(1.02) translateY(-10px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+/* Animated Orbs for Projects */
+@keyframes projectsOrbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.projects-glow-1 {
+  animation: projectsOrbFloat 15s ease-in-out infinite;
+}
+
+.projects-glow-2 {
+  animation: projectsOrbFloat 20s ease-in-out infinite reverse;
+}
+
+/* Bullet points styling in projects */
+.project-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-bullets li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.project-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 14px;
+  height: 2px;
+  background: #c9f31d;
+  border-radius: 99px;
+  opacity: 0.6;
+}
+
+.project-content h2 {
+    margin-bottom: 20px;
+    font-size: 38px;
+    background: linear-gradient(to right, #fff, rgba(255,255,255,0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Responsive Adjustments for Projects */
+@media (max-width: 767px) {
+  .section-title.text-center.mb-80 {
+    margin-bottom: 50px !important;
+  }
+  
+  .projects-items-wrapper .project-content {
+    padding: 25px;
+    margin-top: 30px;
+  }
+  
+  .project-content h2 {
+    font-size: 28px;
+  }
+}
+
+/* Project Bullets - Premium Icon Style */
+.project-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-left: 0 !important; /* Overriding previous padding */
+    margin-bottom: 15px !important;
+}
+
+.project-bullets li::before {
+    display: none !important; /* Hide old pseudo-element bullets */
+}
+
+.bullet-icon {
+    flex-shrink: 0;
+    margin-top: 4px;
+    font-size: 20px;
+    color: #c9f31d;
+    filter: drop-shadow(0 0 5px rgba(201, 243, 29, 0.3));
+}
+
+.project-bullets li span {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+}

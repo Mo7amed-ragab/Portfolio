@@ -15,7 +15,7 @@ const Preloader = () => {
         <div className="preloader__logo-wrap">
           <Logo className="preloader__logo" title="MR portfolio logo" />
         </div>
-        <p className="preloader__title">Mohamed Ragab</p>
+        <p className="preloader__title">Mohamed Ibrahim Ragab</p>
         <p className="preloader__subtitle">Front-End Developer</p>
         <span className="preloader__caption">Loading portfolio experience</span>
         <span className="preloader__line" />

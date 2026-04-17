@@ -1,14 +1,19 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export const OnePageMenu = ({ onItemClick }) => {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   const items = [
-    { href: "#home", label: "Home", eyebrow: "Start here" },
-    { href: "#about", label: "About", eyebrow: "Who I am" },
-    { href: "#experiences", label: "Experiences", eyebrow: "Career path" },
-    { href: "#projects", label: "Projects", eyebrow: "Selected work" },
-    { href: "#contact", label: "Contact Me", eyebrow: "Let us talk" },
+    { href: isHomePage ? "#home" : "/#home", label: "Home", eyebrow: "Start here" },
+    { href: isHomePage ? "#about" : "/#about", label: "About", eyebrow: "Who I am" },
+    { href: isHomePage ? "#experiences" : "/#experiences", label: "Experiences", eyebrow: "Career path" },
+    { href: isHomePage ? "#projects" : "/#projects", label: "Projects", eyebrow: "Selected work" },
+    { href: isHomePage ? "#contact" : "/#contact", label: "Contact Me", eyebrow: "Let us talk" },
   ];
   const [activeHref, setActiveHref] = useState("#home");
 
@@ -77,36 +82,40 @@ export const OnePageMenu = ({ onItemClick }) => {
 
 const LinkItem = ({ item, isActive, onItemClick }) => {
   return (
-    <motion.a
-      className={`text-decoration-none ${isActive ? "is-active" : ""}`}
+    <Link
       href={item.href}
-      aria-current={isActive ? "page" : undefined}
+      className={`text-decoration-none ${isActive ? "is-active" : ""}`}
+      style={{ position: "relative", display: "flex", width: "100%" }}
       onClick={onItemClick}
-      whileHover={{ y: -2 }}
-      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-      style={{ position: "relative" }}
     >
-      <span className="menu-link__copy">
-        <span className="menu-link__eyebrow">{item.eyebrow}</span>
-        <span className="menu-link__label">{item.label}</span>
-      </span>
-      <span className="menu-link__arrow" aria-hidden="true">
-        <i className="far fa-arrow-right" />
-      </span>
+      <motion.div
+        className="menu-link-wrapper"
+        whileHover={{ y: -2 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        style={{ display: "flex", alignItems: "center", width: "100%" }}
+      >
+        <span className="menu-link__copy">
+          <span className="menu-link__eyebrow">{item.eyebrow}</span>
+          <span className="menu-link__label">{item.label}</span>
+        </span>
+        <span className="menu-link__arrow" aria-hidden="true">
+          <i className="far fa-arrow-right" />
+        </span>
 
-      {isActive && (
-        <motion.div
-          layoutId="nav-underline"
-          className="nav-motion-underline"
-          initial={false}
-          transition={{
-            type: "spring",
-            stiffness: 380,
-            damping: 30,
-          }}
-        />
-      )}
-    </motion.a>
+        {isActive && (
+          <motion.div
+            layoutId="nav-underline"
+            className="nav-motion-underline"
+            initial={false}
+            transition={{
+              type: "spring",
+              stiffness: 380,
+              damping: 30,
+            }}
+          />
+        )}
+      </motion.div>
+    </Link>
   );
 };
 
