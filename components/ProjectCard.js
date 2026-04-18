@@ -96,7 +96,7 @@ const ProjectCard = ({ project, isReversed }) => {
             alt={project.alt}
             width={800}
             height={600}
-            layout="responsive"
+            style={{ width: "100%", height: "auto" }}
             priority={false}
           />
           {project.link && (

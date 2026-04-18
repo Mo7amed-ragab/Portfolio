@@ -35,6 +35,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             className="col-lg-6 hero-v2__content-col"
+            suppressHydrationWarning
           >
             <div className="hero-v2__greeting">
               <span className="hero-v2__greeting-wave" aria-hidden="true">
@@ -84,6 +85,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             className="col-lg-6 hero-v2__skills-col"
+            suppressHydrationWarning
           >
             <Skills />
           </motion.div>

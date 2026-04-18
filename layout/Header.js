@@ -51,6 +51,7 @@ const Header1 = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="header-upper"
+        suppressHydrationWarning
       >
         <div className="container clearfix">
           <div className="header-inner rel d-flex align-items-center">

@@ -67,6 +67,7 @@ export const OnePageMenu = ({ onItemClick }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * index, duration: 0.5 }}
             className={isActive ? "current" : ""}
+            suppressHydrationWarning
           >
             <LinkItem
               item={item}
