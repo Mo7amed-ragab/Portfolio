@@ -10,8 +10,8 @@ A high-performance, modern portfolio showcasing engineering expertise in buildin
 
 ## 📸 Preview
 
-![Portfolio Hero Section](https://via.placeholder.com/1200x600/0a0a0a/ffffff?text=Add+Home+Section+Screenshot+Here)
-*The hero section featuring a professional introduction and quick access to core expertise.*
+![Portfolio Hero Section](/public/assets/images/projects/image.png)
+_The hero section featuring a professional introduction and quick access to core expertise._
 
 ---
 
@@ -42,17 +42,23 @@ Built with a modern, high-performance stack for optimal speed and SEO:
 ## 📂 Project Highlights
 
 ### 🛡️ RD App
+
 Enterprise-grade admin platform powering daily operations at DomApp.
+
 - Architected scalable frontend with modular component design.
 - Built a dynamic Question Builder engine for automated reporting.
 
 ### 🏢 EndUser System
+
 Multi-module client portal integrated with RD App for project lifecycle management.
+
 - Real-time notification and tracking system using Socket.IO.
 - Secure file upload pipeline with AWS S3 integration.
 
 ### 🎓 ElMullim
+
 Full-featured learning management system with role-based access.
+
 - Multi-role authentication (Student, Parent, Instructor).
 - Integrated i18n for Arabic/English support.
 
@@ -63,23 +69,28 @@ Full-featured learning management system with role-based access.
 Follow these steps to run the project locally:
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/Mo7amed-ragab/Portfolio.git
 cd Portfolio
 ```
 
 ### 2. Install dependencies
+
 ```bash
 npm install
 ```
 
 ### 3. Run the development server
+
 ```bash
 npm run dev
 ```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### 4. Build for production
+
 ```bash
 npm run build
 ```
