@@ -2,168 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import {
-  SiBootstrap,
-  SiCss,
-  SiFormik,
-  SiGit,
-  SiGithub,
-  SiHtml5,
-  SiJavascript,
-  SiNextdotjs,
-  SiPostman,
-  SiOpenapiinitiative,
-  SiReact,
-  SiReactquery,
-  SiRedux,
-  SiSass,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
+import { orbitSkills } from "@/utility/techIcons";
 
 const getSkillWidth = (skill) =>
   skill.width ?? `${Math.max(126, skill.value.length * 9 + 48)}px`;
-
-const orbitSkills = [
-  {
-    value: "React.js",
-    orbit: "orbit-one",
-    angle: "12deg",
-    color: "#61dafb",
-    textColor: "#07131f",
-    icon: SiReact,
-  },
-  {
-    value: "TypeScript",
-    orbit: "orbit-three",
-    angle: "84deg",
-    color: "#3178c6",
-    textColor: "#f8fbff",
-    icon: SiTypescript,
-  },
-  {
-    value: "GitHub",
-    orbit: "orbit-one",
-    angle: "92deg",
-    color: "#f5f7fb",
-    textColor: "#0b1220",
-    icon: SiGithub,
-  },
-  {
-    value: "Next.js",
-    orbit: "orbit-two",
-    angle: "34deg",
-    color: "#f8fafc",
-    textColor: "#0a0d12",
-    icon: SiNextdotjs,
-  },
-  {
-    value: "JavaScript",
-    orbit: "orbit-two",
-    angle: "322deg",
-    color: "#f7df1e",
-    textColor: "#161910",
-    icon: SiJavascript,
-  },
-  {
-    value: "Redux",
-    orbit: "orbit-one",
-    angle: "286deg",
-    color: "#a78bfa",
-    textColor: "#140f24",
-    icon: SiRedux,
-  },
-  {
-    value: "React Query",
-    orbit: "orbit-three",
-    angle: "140deg",
-    color: "#ff4154",
-    textColor: "#fff4f6",
-    icon: SiReactquery,
-  },
-  {
-    value: "Bootstrap",
-    orbit: "orbit-two",
-    angle: "156deg",
-    color: "#7952b3",
-    textColor: "#fcfbff",
-    icon: SiBootstrap,
-  },
-  {
-    value: "TailwindCSS",
-    orbit: "orbit-three",
-    angle: "232deg",
-    color: "#38bdf8",
-    textColor: "#08131d",
-    icon: SiTailwindcss,
-  },
-  {
-    value: "Postman",
-    orbit: "orbit-three",
-    angle: "284deg",
-    color: "#ff6c37",
-    textColor: "#1d0e07",
-    icon: SiPostman,
-  },
-  {
-    value: "HTML",
-    orbit: "orbit-one",
-    angle: "150deg",
-    color: "#e34f26",
-    textColor: "#fff7f4",
-    icon: SiHtml5,
-  },
-  {
-    value: "CSS",
-    orbit: "orbit-two",
-    angle: "246deg",
-    color: "#1572b6",
-    textColor: "#fff7f4",
-    icon: SiCss,
-  },
-  {
-    value: "Sass",
-    orbit: "orbit-one",
-    angle: "212deg",
-    color: "#cc6699",
-    textColor: "#220d18",
-    icon: SiSass,
-  },
-  {
-    value: "Zustand",
-    orbit: "orbit-two",
-    angle: "184deg",
-    color: "#8b6b4a",
-    textColor: "#fff8f0",
-    iconSrc:
-      "https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg",
-    iconImageClassName: "skills-orbit__skill-icon-image--zustand",
-  },
-  {
-    value: "Formik",
-    orbit: "orbit-three",
-    angle: "24deg",
-    color: "#ec4899",
-    textColor: "#210811",
-    icon: SiFormik,
-  },
-  {
-    value: "Git",
-    orbit: "orbit-two",
-    angle: "120deg",
-    color: "#f1502f",
-    textColor: "#1b0d09",
-    icon: SiGit,
-  },
-  {
-    value: "REST APIs",
-    orbit: "orbit-three",
-    angle: "184deg",
-    color: "#f97316",
-    textColor: "#1c0d05",
-    icon: SiOpenapiinitiative,
-  },
-];
 
 const stars = [
   { top: "8%", left: "12%", size: "4px", delay: "0s" },
@@ -240,16 +82,16 @@ const Skills = () => {
                   aria-label={`${skill.value} skill highlight`}
                 >
                   <span className="skills-orbit__skill-icon" aria-hidden="true">
-                    {skill.iconSrc ? (
+                    {skill.iconSrc || skill.iconSvg ? (
                       <Image
-                        src={skill.iconSrc}
+                        src={skill.iconSrc || skill.iconSvg}
                         alt={skill.value}
                         width={24}
                         height={24}
                         className={`skills-orbit__skill-icon-image ${skill.iconImageClassName ?? ""}`}
                       />
                     ) : (
-                      <Icon {...skill.iconProps} />
+                      Icon && <Icon {...skill.iconProps} />
                     )}
                   </span>
                   <span className="skills-orbit__skill-label">

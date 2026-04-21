@@ -10,7 +10,7 @@ A high-performance, modern portfolio showcasing engineering expertise in buildin
 
 ## 📸 Preview
 
-![Portfolio Hero Section](/public/assets/images/projects/image.png)
+![Portfolio Hero Section](/public/assets/images/projects/portfolio.png)
 _The hero section featuring a professional introduction and quick access to core expertise._
 
 ---

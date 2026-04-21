@@ -6618,7 +6618,7 @@ h6,
   -webkit-transform: translate(-50%);
   -ms-transform: translate(-50%);
   transform: translate(-50%);
-  background: url("../images/projects/btn-bg.png");
+  /* background: url("../images/projects/btn-bg.png"); */
   background-size: cover;
 }
 @media only screen and (max-width: 991px) {
@@ -8632,4 +8632,69 @@ blockquote .blockquote-footer:before {
     font-size: 12px;
     padding: 3px 10px;
   }
+}
+
+/* Premium Project Image Hover Effect */
+.premium-image-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.premium-image-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.premium-image {
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1) !important;
+  display: block;
+}
+.premium-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 18, 0.4);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-decoration: none;
+  overflow: hidden;
+}
+.premium-image-wrapper:hover .premium-overlay {
+  opacity: 1;
+}
+
+.premium-overlay-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #c9f31d, #9cc016);
+  color: #050a12;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 30px rgba(201, 243, 29, 0.2);
+  position: relative;
+  z-index: 10;
+}
+.premium-image-wrapper:hover .premium-overlay-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+.premium-overlay-content i {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+.premium-overlay-content:hover i {
+  transform: translateX(4px) rotate(-45deg);
 }

@@ -2,66 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  SiBootstrap,
-  SiCss,
-  SiHtml5,
-  SiJavascript,
-  SiNextdotjs,
-  SiReact,
-  SiRedux,
-  SiTailwindcss,
-  SiTypescript,
-  SiSocketdotio,
-  SiAppwrite,
-  SiReactrouter,
-  SiAxios,
-  SiJsonwebtokens,
-  SiFramer,
-  SiSass,
-  SiFormik,
-  SiChartdotjs,
-  SiI18Next,
-} from "react-icons/si";
-import {
-  FaCode,
-  FaMobileAlt,
-  FaGlobe,
-  FaAws,
-  FaCloud,
-} from "react-icons/fa";
-import { TbApi } from "react-icons/tb";
+import { getTechDetails } from "@/utility/techIcons";
 import { HiCheckCircle } from "react-icons/hi";
-
-const getTechIcon = (tech) => {
-  const t = tech.toLowerCase();
-  if (t.includes("react.js") || t.includes("react")) return <SiReact />;
-  if (t.includes("next.js") || t.includes("next")) return <SiNextdotjs />;
-  if (t.includes("typescript")) return <SiTypescript />;
-  if (t.includes("javascript") || t === "js") return <SiJavascript />;
-  if (t.includes("redux")) return <SiRedux />;
-  if (t.includes("tailwind")) return <SiTailwindcss />;
-  if (t.includes("bootstrap")) return <SiBootstrap />;
-  if (t.includes("html")) return <SiHtml5 />;
-  if (t.includes("css")) return <SiCss />;
-  if (t.includes("formik")) return <SiFormik />;
-  if (t.includes("chart.js") || t.includes("chart")) return <SiChartdotjs />;
-  if (t.includes("socket.io")) return <SiSocketdotio />;
-  if (t.includes("aws") || t.includes("s3")) return <FaAws />;
-  if (t.includes("appwrite")) return <SiAppwrite />;
-  if (t.includes("router")) return <SiReactrouter />;
-  if (t.includes("axios")) return <SiAxios />;
-  if (t.includes("jwt") || t.includes("auth")) return <SiJsonwebtokens />;
-  if (t.includes("i18n")) return <SiI18Next />;
-  if (t.includes("framer")) return <SiFramer />;
-  if (t.includes("sass") || t.includes("scss")) return <SiSass />;
-  if (t.includes("api") || t.includes("restful") || t.includes("tmdb"))
-    return <TbApi />;
-  if (t.includes("responsive") || t.includes("mobile")) return <FaMobileAlt />;
-  if (t.includes("globe") || t.includes("world")) return <FaGlobe />;
-  if (t.includes("cloud")) return <FaCloud />;
-  return <FaCode />;
-};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -88,26 +30,82 @@ const itemVariants = {
 
 const ProjectCard = ({ project, isReversed }) => {
   const imageColumn = (
-    <div className={isReversed ? "col-lg-6" : "col-md-6"}>
-      <div className="project-item style-four wow fadeInUp delay-0-2s">
-        <div className="image">
+    <div
+      className={isReversed ? "col-lg-6" : "col-md-6"}
+      style={{ position: "relative" }}
+    >
+      <div
+        className="d-none d-xl-block"
+        style={{
+          position: "absolute",
+          top: "-47%",
+          [isReversed ? "left" : "right"]: "-22px",
+          width: "220px",
+          zIndex: 50,
+          pointerEvents: "none",
+          transform: isReversed ? "scaleX(-1)" : "scaleX(1)",
+        }}
+      >
+        <svg
+          width="220"
+          height="150"
+          viewBox="0 0 220 150"
+          fill="none"
+          style={{ overflow: "visible" }}
+        >
+          {/* Main animated swoop with a central loop */}
+          <motion.path
+            d="M 210 20 C 160 20, 160 100, 120 100 C 80 100, 80 40, 110 40 C 140 40, 100 80, 20 100"
+            stroke="#c9f31d"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            fill="none"
+            initial={{ pathLength: 0 }}
+            whileInView={{ pathLength: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.4, ease: "easeInOut", delay: 0.1 }}
+          />
+          {/* Arrowhead pointing down-left (ends at 20, 100) */}
+          <motion.path
+            d="M 20 100 L 32 88 M 20 100 L 40 103"
+            stroke="#c9f31d"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+            initial={{ pathLength: 0, opacity: 0 }}
+            whileInView={{ pathLength: 1, opacity: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4, delay: 1.4 }}
+          />
+        </svg>
+      </div>
+      <div
+        className="project-item wow fadeInUp delay-0-2s mb-10"
+        style={{ padding: "0 10px" }}
+      >
+        <div className="premium-image-wrapper">
           <Image
             src={project.image}
             alt={project.alt}
             width={800}
             height={600}
+            className="premium-image"
             style={{ width: "100%", height: "auto" }}
             priority={false}
           />
           {project.link && (
             <Link legacyBehavior href={project.link}>
               <a
-                className="hover-box"
+                className="premium-overlay"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={project.ariaLabel}
               >
-                <i className="far fa-arrow-right" />
+                <div className="premium-overlay-content">
+                  <span>View Live</span>
+                  <i className="far fa-arrow-right" />
+                </div>
               </a>
             </Link>
           )}
@@ -119,10 +117,7 @@ const ProjectCard = ({ project, isReversed }) => {
   const contentColumn = (
     <div className="col-xl-6 col-lg-6">
       <div className="project-content wow fadeInRight delay-0-2s">
-        {project.badge && (
-          <span className="project-type-badge">{project.badge}</span>
-        )}
-        <span className="sub-title">{project.subtitle}</span>
+        {/* <span className="sub-title">{project.subtitle}</span> */}
         <h2>{project.title}</h2>
         <p className="project-description">{project.description}</p>
         <ul className="project-bullets">
@@ -140,25 +135,38 @@ const ProjectCard = ({ project, isReversed }) => {
           viewport={{ once: true }}
           className="project-tech-stack"
         >
-          {project.techStack.map((tech, i) => (
-            <motion.div
-              key={i}
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="tech-tag"
-            >
-              <span className="tech-tag__icon">{getTechIcon(tech)}</span>
-              <span className="tech-tag__label">{tech}</span>
-            </motion.div>
-          ))}
+          {project.techStack.map((tech, i) => {
+            const details = getTechDetails(tech);
+            return (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="tech-tag"
+              >
+                <span className="tech-tag__icon">
+                  {details.iconSvg ? (
+                    <img
+                      src={details.iconSvg}
+                      alt={details.name}
+                      width={18}
+                      height={18}
+                    />
+                  ) : (
+                    details.icon && <details.icon color={details.color} />
+                  )}
+                </span>
+                <span className="tech-tag__label">{tech}</span>
+              </motion.div>
+            );
+          })}
         </motion.div>
-        <p className="key-feature">{project.keyFeature}</p>
       </div>
     </div>
   );
 
   return (
-    <div className="row align-items-center">
+    <div className="row align-items-center position-relative mb-5">
       {isReversed ? (
         <>
           {contentColumn}
