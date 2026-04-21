@@ -1,4 +1,4 @@
-# 🚀 Mohamed Ragab | Senior Front-End Developer Portfolio
+# 🚀 Mohamed Ragab | Front-End Developer Portfolio
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://www.mohamedragab.site/)
 [![GitHub Stars](https://img.shields.io/github/stars/Mo7amed-ragab/Portfolio?style=for-the-badge)](https://github.com/Mo7amed-ragab/Portfolio)
