@@ -29,9 +29,38 @@ const itemVariants = {
 };
 
 const ProjectCard = ({ project, isReversed }) => {
+  const imageElement = (
+    <div className="premium-image-wrapper">
+      <Image
+        src={project.image}
+        alt={project.ariaLabel}
+        width={800}
+        height={600}
+        className="premium-image"
+        style={{ width: "100%", height: "auto" }}
+        priority={false}
+      />
+      {project.link && (
+        <Link legacyBehavior href={project.link}>
+          <a
+            className="premium-overlay"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={project.ariaLabel}
+          >
+            <div className="premium-overlay-content">
+              <span>View Live</span>
+              <span className="pulse-dot" />
+            </div>
+          </a>
+        </Link>
+      )}
+    </div>
+  );
+
   const imageColumn = (
     <div
-      className={isReversed ? "col-lg-6" : "col-md-6"}
+      className={`${isReversed ? "col-lg-6" : "col-md-6"} d-none d-lg-block`}
       style={{ position: "relative" }}
     >
       <div
@@ -81,35 +110,10 @@ const ProjectCard = ({ project, isReversed }) => {
         </svg>
       </div>
       <div
-        className="project-item wow fadeInUp delay-0-2s mb-10"
+        className="project-item wow fadeInUp delay-0-2s mb-3 mb-lg-0"
         style={{ padding: "0 10px" }}
       >
-        <div className="premium-image-wrapper">
-          <Image
-            src={project.image}
-            alt={project.alt}
-            width={800}
-            height={600}
-            className="premium-image"
-            style={{ width: "100%", height: "auto" }}
-            priority={false}
-          />
-          {project.link && (
-            <Link legacyBehavior href={project.link}>
-              <a
-                className="premium-overlay"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={project.ariaLabel}
-              >
-                <div className="premium-overlay-content">
-                  <span>View Live</span>
-                  <span className="pulse-dot" />
-                </div>
-              </a>
-            </Link>
-          )}
-        </div>
+        {imageElement}
       </div>
     </div>
   );
@@ -117,6 +121,11 @@ const ProjectCard = ({ project, isReversed }) => {
   const contentColumn = (
     <div className="col-xl-6 col-lg-6">
       <div className="project-content wow fadeInRight delay-0-2s">
+        <div className="d-block d-lg-none mb-4">
+          <div className="project-item" style={{ padding: 0 }}>
+            {imageElement}
+          </div>
+        </div>
         <h2>{project.title}</h2>
         {project.subTitle && <h4 className="pb-4">{project.subTitle}</h4>}
         <ul className="project-bullets">
@@ -165,7 +174,10 @@ const ProjectCard = ({ project, isReversed }) => {
   );
 
   return (
-    <div className="row align-items-center position-relative mb-5">
+    <div
+      className="row align-items-center position-relative mb-3 mb-lg-5 pb-3 pb-lg-0"
+      style={{ rowGap: "15px" }}
+    >
       {isReversed ? (
         <>
           {contentColumn}

@@ -9,11 +9,31 @@ export const OnePageMenu = ({ onItemClick }) => {
   const isHomePage = pathname === "/";
 
   const items = [
-    { href: isHomePage ? "#home" : "/#home", label: "Home", eyebrow: "Start here" },
-    { href: isHomePage ? "#about" : "/#about", label: "About", eyebrow: "Who I am" },
-    { href: isHomePage ? "#experiences" : "/#experiences", label: "Experiences", eyebrow: "Career path" },
-    { href: isHomePage ? "#projects" : "/#projects", label: "Projects", eyebrow: "Selected work" },
-    { href: isHomePage ? "#contact" : "/#contact", label: "Contact Me", eyebrow: "Let us talk" },
+    {
+      href: isHomePage ? "#home" : "/#home",
+      label: "Home",
+      eyebrow: "Start here",
+    },
+    {
+      href: isHomePage ? "#about" : "/#about",
+      label: "About",
+      eyebrow: "Who I am",
+    },
+    {
+      href: isHomePage ? "#experiences" : "/#experiences",
+      label: "Experiences",
+      eyebrow: "Career path",
+    },
+    {
+      href: isHomePage ? "#projects" : "/#projects",
+      label: "Projects",
+      eyebrow: "Selected work",
+    },
+    {
+      href: isHomePage ? "#contact" : "/#contact",
+      label: "Contact Me",
+      eyebrow: "Let us talk",
+    },
   ];
   const [activeHref, setActiveHref] = useState("#home");
 
@@ -93,7 +113,12 @@ const LinkItem = ({ item, isActive, onItemClick }) => {
         className="menu-link-wrapper"
         whileHover={{ y: -2 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        style={{ display: "flex", alignItems: "center", width: "100%" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "100%",
+        }}
       >
         <span className="menu-link__copy">
           <span className="menu-link__eyebrow">{item.eyebrow}</span>

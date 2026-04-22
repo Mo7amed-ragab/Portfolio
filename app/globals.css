@@ -2856,12 +2856,11 @@ html {
 .projects-items-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 40px; /* Reduced gap as requested */
 }
 
 @media (max-width: 991px) {
   .projects-items-wrapper {
-    gap: 80px;
+    gap: 0px;
   }
 }
 

@@ -58,7 +58,7 @@ const Hero = () => {
               scalable performance using the modern React stack.
             </p>
 
-            <div className="hero-v2__actions">
+            <div className="hero-v2__actions mb-5 mb-lg-0 pb-4 pb-lg-0">
               <Link
                 href="https://drive.google.com/uc?export=download&id=1TbicRDl_j825eTxAf5newn4QLxNmHJEr"
                 download
