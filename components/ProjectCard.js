@@ -104,7 +104,7 @@ const ProjectCard = ({ project, isReversed }) => {
               >
                 <div className="premium-overlay-content">
                   <span>View Live</span>
-                  <i className="far fa-arrow-right" />
+                  <span className="pulse-dot" />
                 </div>
               </a>
             </Link>
@@ -117,9 +117,8 @@ const ProjectCard = ({ project, isReversed }) => {
   const contentColumn = (
     <div className="col-xl-6 col-lg-6">
       <div className="project-content wow fadeInRight delay-0-2s">
-        {/* <span className="sub-title">{project.subtitle}</span> */}
         <h2>{project.title}</h2>
-        <p className="project-description">{project.description}</p>
+        {project.subTitle && <h4 className="pb-4">{project.subTitle}</h4>}
         <ul className="project-bullets">
           {project.bullets.map((bullet, i) => (
             <li key={i}>

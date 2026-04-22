@@ -1,12 +1,9 @@
 export const projectsData = [
   {
     title: "RDAPP",
-    subtitle: "Enterprise Admin Dashboard",
-    description:
-      "Enterprise-grade admin platform powering daily operations at DomApp",
     bullets: [
-      "Architected scalable frontend with modular component design across 10+ feature modules",
-      "Engineered core modules for Tickets, Roles/Permissions, and a Dynamic Question Builder for automated reporting",
+      "I Contributed to building and maintaining core modules such as Tickets Management, Roles & Permissions, Dashboards, and Reporting systems.",
+      "One of the key features I worked on was a dynamic Question Builder, allowing users to create customizable forms with flexible answer structures and generate detailed reports.",
       "Integrated RESTful APIs and AWS S3 for structured data flow and efficient media handling",
       "Managed complex business logic and form state to ensure scalable and dynamic user flows",
       "Contributed to code reviews and task distribution within a cross-functional team",
@@ -14,7 +11,7 @@ export const projectsData = [
     techStack: [
       "React.js",
       "Redux",
-      "RESTful APIs",
+      "API Integration",
       "Bootstrap",
       "Formik",
       "Axios",
@@ -22,37 +19,34 @@ export const projectsData = [
     ],
     image: "assets/images/projects/rdapp.png",
     link: "https://rdapp-tfi-cpv-ca2x.onrender.com/login",
-    ariaLabel: "View RDAPP",
+    ariaLabel: "RDAPP",
   },
   {
-    title: "EndUser – Client Dashboard",
-    subtitle: "Integrated Project Management System",
-    description:
-      "Multi-module client portal integrated with RDAPP for project lifecycle management",
+    title: "EndUser – Client",
+    subTitle: "(Integrated with RDAPP)",
     bullets: [
-      "Developed a multi-module architecture (Projects, Tickets, Reports) with role-based access control",
-      "Integrated Socket.IO for live updates and AWS S3 for secure project assets management",
-      "Leveraged React Query for server state and Zustand for global state management",
-      "Optimized responsive UI with i18n multi-language support and Zod/React Hook Form validations",
+      "Designed and implemented a scalable multi-module system (Projects, Tickets) with role-based access control",
+      "Integrated real-time updates using Socket.IO and managed secure file storage with AWS S3",
+      "Managed server state efficiently using React Query and handled global state with Zustand",
+      "Built a fully responsive, multilingual UI with robust form validation using Zod and React Hook Form",
     ],
     techStack: [
       "React.js",
-      "TanStack Query",
       "Zustand",
       "Tailwind CSS",
       "Socket.IO",
       "i18next",
       "AWS S3",
+      "API Integration",
+      "firebase",
+      "Axios",
     ],
     image: "assets/images/projects/end-user.png",
     link: "https://end-user-new-yids.onrender.com/login",
-    ariaLabel: "View EndUser System",
+    ariaLabel: "EndUser",
   },
   {
     title: "ElMullim – E-Learning Platform",
-    subtitle: "LMS Platform",
-    description:
-      "Full-featured learning management system with role-based access for students, parents, and instructors",
     bullets: [
       "Implemented seamless course browsing, lesson streaming, and complex user management workflows",
       "Utilized React Query for efficient caching and Redux for global state, ensuring high performance",
@@ -66,22 +60,21 @@ export const projectsData = [
       "Redux",
       "i18next",
       "Zod",
-      "Bootstrap",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Axios",
     ],
     image: "assets/images/projects/elmullim.png",
     link: "https://elmullim-frontend.vercel.app/home",
-    ariaLabel: "View ElMullim",
+    ariaLabel: "ElMullim",
   },
   {
     title: "Fresh Cart E-Commerce",
-    subtitle: "Online Shopping Application",
-    description:
-      "Modern e-commerce platform with dynamic product catalog and seamless checkout flow",
     bullets: [
-      "Integrated REST APIs for dynamic product data, user authentication (JWT), and order processing",
-      "Built persistent cart management with real-time updates and optimized shopping experience",
-      "Architected efficient state management and API handling to ensure UI responsiveness",
-      "Developed responsive UI components using Tailwind CSS and Swiper.js for product displays",
+      "Integrated RESTful APIs for products, authentication (JWT), and order management",
+      "Built persistent cart functionality with real-time updates to enhance user experience",
+      "Structured efficient state and API handling for high UI responsiveness",
+      "Developed responsive and interactive UI using Tailwind CSS and Swiper.js",
     ],
     techStack: [
       "React.js",
@@ -93,18 +86,15 @@ export const projectsData = [
     ],
     image: "assets/images/projects/fresh-cart.png",
     link: "https://e-commerce-fresh-cart-plum.vercel.app/",
-    ariaLabel: "View Fresh Cart",
+    ariaLabel: "Fresh Cart",
   },
   {
     title: "Professional Law Firm",
-    subtitle: "Corporate Website",
-    description:
-      "Polished corporate website built for a legal services firm focusing on trust and responsiveness.",
     bullets: [
-      "Developed a fully responsive multi-page layout optimized for all device viewports",
-      "Implemented smooth scroll animations and interactive sections to enhance user engagement.",
-      "Built reusable component structure for services, team profiles, and contact forms",
-      "Ensured cross-browser compatibility and accessibility compliance across all pages.",
+      "Built a fully responsive multi-page website optimized across all devices",
+      "Implemented smooth scrolling and interactive UI elements to improve engagement",
+      "Created reusable components for services, team sections, and contact forms",
+      "Ensured cross-browser compatibility and adherence to accessibility standards",
     ],
     techStack: [
       "HTML5",
@@ -115,18 +105,15 @@ export const projectsData = [
     ],
     image: "assets/images/projects/legal.png",
     link: "https://legal-frim-template.vercel.app/",
-    ariaLabel: "View Legal Firm Website",
+    ariaLabel: "Legal Firm",
   },
   {
     title: "Restaurant & Food Delivery",
-    subtitle: "UI/UX Frontend",
-    description:
-      "Visually rich food ordering interface designed to maximize engagement and conversion",
     bullets: [
-      "Crafted a visually appealing menu showcase with high-quality image grids and category-based navigation",
-      "Built interactive UI components including animated food cards, hover effects, and smooth transitions",
-      "Implemented responsive grid layout adapting seamlessly across all screen sizes",
-      "Optimized image loading and page performance for faster initial render times",
+      "Designed an engaging menu interface with categorized navigation and visual hierarchy",
+      "Developed interactive UI elements including animations and hover effects",
+      "Implemented a fully responsive grid system for seamless multi-device experience",
+      "Optimized images and performance for faster load times",
     ],
     techStack: [
       "HTML5",
@@ -137,18 +124,15 @@ export const projectsData = [
     ],
     image: "assets/images/projects/bistro-bliss.png",
     link: "https://food-website-cyan-five.vercel.app/",
-    ariaLabel: "View Restaurant & Food UI Project",
+    ariaLabel: "Restaurant & Food",
   },
   {
     title: "Movies Explorer",
-    subtitle: "Movie Discovery Platform",
-    description:
-      "Dynamic discovery platform integrated with TMDB API for up-to-date cinema data",
     bullets: [
-      "Built real-time search with debounced API calls and instant result rendering",
-      "Integrated Appwrite as a backend solution for data persistence and user collections",
-      "Engineered a fully responsive layout with Netflix-inspired UI using Tailwind CSS and Shadcn",
-      "Focused on fast content rendering and efficient API handling for seamless browsing",
+      "Implemented real-time search with debouncing for optimized API requests",
+      "Integrated Appwrite for backend services including data storage and user management",
+      "Built a responsive, Netflix-inspired UI using Tailwind CSS and Shadcn",
+      "Enhanced performance through efficient API handling and fast content rendering",
     ],
     techStack: [
       "React.js",
@@ -160,6 +144,6 @@ export const projectsData = [
     ],
     image: "assets/images/projects/movies.png",
     link: "https://movies-website-v2.vercel.app/",
-    ariaLabel: "View Movies Explorer",
+    ariaLabel: "Movies Explorer",
   },
 ];

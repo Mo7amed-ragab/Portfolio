@@ -53,7 +53,7 @@ export const SKILLS_DATA = {
     color: "#8b6b4a",
   },
   formik: { name: "Formik", icon: SiFormik, color: "#ec4899" },
-  restapi: { name: "REST APIs", icon: TbApi, color: "#f97316" },
+  restapi: { name: "API Integration", icon: TbApi, color: "#f97316" },
   socketio: { name: "Socket.io", icon: SiSocketdotio, color: "#ffffff" },
   aws: { name: "AWS", icon: FaAws, color: "#ff9900" },
   appwrite: { name: "Appwrite", icon: SiAppwrite, color: "#f02e65" },
@@ -64,7 +64,7 @@ export const SKILLS_DATA = {
   jwt: { name: "JWT", icon: SiJsonwebtokens, color: "#000000" },
   i18next: { name: "i18next", icon: SiI18Next, color: "#26a69a" },
   shadcn: { name: "Shadcn UI", icon: SiShadcnui, color: "#000000" },
-  framer: { name: "Framer Motion", icon: SiFramer, color: "#0055FF" },
+  "framer motion": { name: "Framer Motion", icon: SiFramer, color: "#0055FF" },
   chartjs: { name: "Chart.js", icon: SiChartdotjs, color: "#FF6384" },
   tmdb: { name: "TMDB", icon: SiThemoviedatabase, color: "#01b4e4" },
   globe: { name: "Globe", icon: FaGlobe, color: "#c9f31d" },
@@ -84,8 +84,8 @@ const TECH_MAP = {
   css3: "css",
   "tanstack query": "reactquery",
   "react query": "reactquery",
-  "rest apis": "restapi",
-  "restful apis": "restapi",
+  apis: "restapi",
+  "api integration": "restapi",
   api: "restapi",
   tmdb: "tmdb",
   "react router": "router",
@@ -94,7 +94,7 @@ const TECH_MAP = {
   "aws s3": "aws",
   "socket.io": "socketio",
   i18n: "i18next",
-  responsive: "mobile",
+  "responsive design": "mobile",
 };
 
 export const getTechDetails = (name) => {
@@ -173,13 +173,7 @@ const orbitSkillsBase = [
   },
   { value: "HTML5", orbit: "orbit-one", angle: "150deg", textColor: "#fff7f4" },
   { value: "CSS3", orbit: "orbit-two", angle: "246deg", textColor: "#fff7f4" },
-  { value: "Sass", orbit: "orbit-one", angle: "212deg", textColor: "#220d18" },
-  {
-    value: "Zustand",
-    orbit: "orbit-two",
-    angle: "184deg",
-    textColor: "#fff8f0",
-  },
+  { value: "SASS", orbit: "orbit-one", angle: "212deg", textColor: "#220d18" },
   {
     value: "Formik",
     orbit: "orbit-three",
@@ -188,7 +182,7 @@ const orbitSkillsBase = [
   },
   { value: "Git", orbit: "orbit-two", angle: "120deg", textColor: "#1b0d09" },
   {
-    value: "REST APIs",
+    value: "APIs",
     orbit: "orbit-three",
     angle: "184deg",
     textColor: "#1c0d05",
