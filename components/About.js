@@ -126,13 +126,13 @@ const About = () => {
                       },
 
                       {
-                        label: "Professional",
+                        label: "LinkedIn",
                         val: "mo7amed-ibrahim",
                         link: "https://www.linkedin.com/in/mo7amed-ibrahim/",
                         icon: "fab fa-linkedin-in",
                       },
                       {
-                        label: "Engineering Hub",
+                        label: "GitHub",
                         val: "Mo7amed-ragab",
                         link: "https://github.com/Mo7amed-ragab",
                         icon: "fab fa-github",
