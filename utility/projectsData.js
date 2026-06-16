@@ -1,6 +1,7 @@
 export const projectsData = [
   {
     title: "RDAPP",
+    subTitle: "Project Management Platform (Saudi Building Code)",
     bullets: [
       "I Contributed to building and maintaining core modules such as Tickets Management, Roles & Permissions, Dashboards, and Reporting systems.",
       "One of the key features I worked on was a dynamic Question Builder, allowing users to create customizable forms with flexible answer structures and generate detailed reports.",
@@ -18,12 +19,12 @@ export const projectsData = [
       "AWS S3",
     ],
     image: "assets/images/projects/rdapp.png",
-    link: "https://rdapp-tfi-cpv-ca2x.onrender.com/login",
+    link: "https://rdapp.cpvarabia.com",
     ariaLabel: "RDAPP",
   },
   {
-    title: "EndUser – Client",
-    subTitle: "(Integrated with RDAPP)",
+    title: "EndUser Portal",
+    subTitle: "Insurance & Building Management Platform",
     bullets: [
       "Designed and implemented a scalable multi-module system (Projects, Tickets) with role-based access control",
       "Integrated real-time updates using Socket.IO and managed secure file storage with AWS S3",
@@ -42,8 +43,8 @@ export const projectsData = [
       "Axios",
     ],
     image: "assets/images/projects/end-user.png",
-    link: "https://end-user-new-yids.onrender.com/login",
-    ariaLabel: "EndUser",
+    link: "https://portal.cpvarabia.com",
+    ariaLabel: "EndUser Portal",
   },
   {
     title: "ElMullim – E-Learning Platform",
@@ -67,6 +68,28 @@ export const projectsData = [
     image: "assets/images/projects/elmullim.png",
     link: "https://elmullim-frontend.vercel.app/home",
     ariaLabel: "ElMullim",
+  },
+  {
+    title: "CEO KPI Dashboard",
+    subTitle: "Executive Decision-Support System",
+    bullets: [
+      "Engineered a high-performance dashboard enabling C-suite executives to monitor organizational health across 6 core departments.",
+      "Integrated Supabase for secure authentication and implemented a real-time notification system for critical alerts.",
+      "Utilized TanStack Query for efficient state caching and React Router query parameters for persistent filter searches.",
+      "Implemented full bilingual support (English/Arabic RTL) with zero layout shifting, focusing on scalable clean architecture.",
+    ],
+    techStack: [
+      "React.js",
+      "Supabase",
+      "React Query",
+      "i18next",
+      "Tailwind CSS",
+      "Framer Motion",
+      "API Integration",
+    ],
+    image: "assets/images/projects/CEO-KPI.png",
+    link: "https://ceo-dashboard-gold.vercel.app/",
+    ariaLabel: "CEO-KPI Dashboard",
   },
   {
     title: "Fresh Cart E-Commerce",
