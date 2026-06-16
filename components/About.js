@@ -120,8 +120,8 @@ const About = () => {
                     {[
                       {
                         label: "Direct Message",
-                        val: "mohamedragab0160@gmail.com",
-                        link: "mailto:mohamedragab0160@gmail.com",
+                        val: "m.ragab.dev@gmail.com",
+                        link: "mailto:m.ragab.dev@gmail.com",
                         icon: "far fa-envelope-open",
                       },
 

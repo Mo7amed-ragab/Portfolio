@@ -99,7 +99,7 @@ npm run build
 
 ## 📬 Contact & Socials
 
-- 📧 **Email:** [mohamedragab0160@gmail.com](mailto:mohamedragab0160@gmail.com)
+- 📧 **Email:** [m.ragab.dev@gmail.com](mailto:m.ragab.dev@gmail.com)
 - 💼 **LinkedIn:** [mo7amed-ibrahim](https://www.linkedin.com/in/mo7amed-ibrahim/)
 - 💻 **GitHub:** [@Mo7amed-ragab](https://github.com/Mo7amed-ragab)
 - 📞 **Phone:** [+20 1092321755](tel:+201092321755)
