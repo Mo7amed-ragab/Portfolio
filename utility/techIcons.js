@@ -48,8 +48,7 @@ export const SKILLS_DATA = {
   zustand: {
     name: "Zustand",
     icon: null,
-    iconSvg:
-      "https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg",
+    iconSvg: "/assets/images/zustand.svg",
     color: "#8b6b4a",
   },
   formik: { name: "Formik", icon: SiFormik, color: "#ec4899" },
